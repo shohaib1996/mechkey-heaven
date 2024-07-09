@@ -1,0 +1,55 @@
+.title-icon {
+  width: 21px;
+  height: 14px;
+  position: relative;
+}
+
+.title-icon::before {
+  content: "";
+  position: absolute;
+  border-radius: 14px 14px 14px 14px; /* Assuming this is what the mixin does */
+  background-color: #fa4f09;
+  border: 2px solid #fa4f09;
+  top: 0;
+  left: 0;
+  animation: moveLeft 3s linear infinite;
+  width: 30px;
+  height: 30px;
+}
+
+.title-icon::after {
+  content: "";
+  position: absolute;
+  border-radius: 14px 14px 14px 14px; /* Assuming this is what the mixin does */
+  border: 2px solid #fa4f09;
+  top: 0;
+  right: 0;
+  animation: moveRight 3s linear infinite;
+  width: 30px;
+  height: 30px;
+}
+
+/* Assuming you have these keyframes defined somewhere in your SCSS */
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

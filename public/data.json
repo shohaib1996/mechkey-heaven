@@ -1,0 +1,50 @@
+[
+  {
+    "image": "https://i.imgur.com/hmMZ1Ig.png",
+    "title": "Corsair K95 RGB Platinum XT",
+    "brand": "Corsair",
+    "availableQuantity": 150,
+    "price": 199.99,
+    "rating": 4.7
+  },
+  {
+    "image": "https://i.imgur.com/hmMZ1Ig.png",
+    "title": "Razer BlackWidow Elite",
+    "brand": "Razer",
+    "availableQuantity": 200,
+    "price": 169.99,
+    "rating": 4.6
+  },
+  {
+    "image": "https://i.imgur.com/hmMZ1Ig.png",
+    "title": "Logitech G915 TKL",
+    "brand": "Logitech",
+    "availableQuantity": 120,
+    "price": 229.99,
+    "rating": 4.8
+  },
+  {
+    "image": "https://i.imgur.com/hmMZ1Ig.png",
+    "title": "SteelSeries Apex Pro",
+    "brand": "SteelSeries",
+    "availableQuantity": 90,
+    "price": 199.99,
+    "rating": 4.7
+  },
+  {
+    "image": "https://i.imgur.com/hmMZ1Ig.png",
+    "title": "Ducky One 2 Mini",
+    "brand": "Ducky",
+    "availableQuantity": 60,
+    "price": 99.99,
+    "rating": 4.5
+  },
+  {
+    "image": "https://i.imgur.com/hmMZ1Ig.png",
+    "title": "HyperX Alloy FPS Pro",
+    "brand": "HyperX",
+    "availableQuantity": 80,
+    "price": 89.99,
+    "rating": 4.4
+  }
+]
