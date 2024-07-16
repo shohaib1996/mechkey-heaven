@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 const NavbarLink = () => {
   const routes: string[] = [
     "/",
-    "products",
-    "about-us",
-    "contact-us",
-    "dashboard",
+    "/products",
+    "/about-us",
+    "/contact-us",
+    "/dashboard",
   ];
 
   const navbarItem: string[] = [

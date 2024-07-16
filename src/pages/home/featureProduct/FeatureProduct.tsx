@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import Container from "../../../utils/container/Container";
 import "../../../style/btn.css";
 import "../../../style/advertisement.css";
+import { Link } from "react-router-dom";
+import Cards from "../../../utils/card/Cards";
 
 // Define the interface for the keyboard data
 interface Keyboard {
+  id: number;
   image: string;
   title: string;
   brand: string;
@@ -38,34 +41,17 @@ const FeatureProduct = () => {
           <h1 className="text-4xl font-bold mt-2">Feature Products</h1>
         </div>
         <div>
-          <button className="btn-main">
-            <span>See More</span>
-          </button>
+          <Link to={`/products`}>
+            <button className="btn-main">
+              <span>See More</span>
+            </button>
+          </Link>
         </div>
       </div>
       <hr className="mb-14 border-1" />
       <div className="grid grid-cols-3 mb-20 gap-5">
-        {data?.map((keyboard, index) => (
-          <div key={index} className="border-2 rounded-lg p-5">
-            <img
-              className="rounded-md"
-              src={keyboard.image}
-              alt={keyboard.title}
-            />
-            <h2 className="font-bold text-xl">{keyboard.title}</h2>
-            <p>Brand: {keyboard.brand}</p>
-            <p>Available Quantity: {keyboard.availableQuantity}</p>
-            <p className="text-xl text-[#FA4F09] font-bold">
-              {keyboard.price}$
-            </p>
-            <p className="mb-3">Rating: {keyboard.rating} stars</p>
-            <hr className="border-2" />
-            <div className="mt-3 w-full">
-              <button className="btn-main w-full">
-                <span>See details</span>
-              </button>
-            </div>
-          </div>
+        {data?.map((keyboard) => (
+          <Cards keyboard={keyboard} key={keyboard.id}></Cards>
         ))}
       </div>
     </Container>
