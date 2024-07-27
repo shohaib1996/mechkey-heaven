@@ -1,37 +1,36 @@
-import { useEffect, useState } from "react";
 import Container from "../../../utils/container/Container";
 import "../../../style/btn.css";
 import "../../../style/advertisement.css";
 import { Link } from "react-router-dom";
 import Cards from "../../../utils/card/Cards";
+import { useGetProductsQuery } from "../../../redux/api/baseApi";
 
 // Define the interface for the keyboard data
 interface Keyboard {
-  id: number;
+  _id: string;
   image: string;
   title: string;
   brand: string;
-  availableQuantity: number;
+  quantity: number;
   price: number;
   rating: number;
-  seeDetails: string;
+  description: string;
 }
 
 const FeatureProduct = () => {
   // Use the interface to type the state
-  const [data, setData] = useState<Keyboard[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("../../../../public/data.json");
-      const data: Keyboard[] = await res.json();
-      setData(data);
-    };
+  const { data, isLoading } = useGetProductsQuery(undefined);
 
-    fetchData();
-  }, []);
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#4A249D]"></div>
+      </div>
+    );
+  }
 
-  console.log(data);
+  console.log(data.data);
 
   return (
     <Container>
@@ -50,8 +49,8 @@ const FeatureProduct = () => {
       </div>
       <hr className="mb-14 border-1" />
       <div className="grid grid-cols-3 mb-20 gap-5">
-        {data?.map((keyboard) => (
-          <Cards keyboard={keyboard} key={keyboard.id}></Cards>
+        {data?.data?.slice(0, 6).map((keyboard: Keyboard) => (
+          <Cards keyboard={keyboard} key={keyboard._id}></Cards>
         ))}
       </div>
     </Container>

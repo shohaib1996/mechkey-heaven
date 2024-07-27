@@ -6,18 +6,6 @@ import AboutUs from "../pages/home/aboutUs/AboutUs";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import ContactUs from "../pages/contactUs/ContactUs";
 
-const fetchProductById = async ({ params }) => {
-  const response = await fetch("/data.json");
-  const products = await response.json();
-  const product = products.find(
-    (product) => product.id === parseInt(params.id)
-  );
-  if (!product) {
-    throw new Error("Product not found");
-  }
-  return product;
-};
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -34,7 +22,11 @@ export const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <ProductDetails />,
-        loader: fetchProductById,
+        loader: async ({ params }) => {
+          console.log(params);
+
+          return fetch(`http://localhost:5000/api/v1/product/${params.id}`);
+        },
       },
       {
         path: "about-us",
