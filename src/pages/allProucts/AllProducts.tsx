@@ -95,6 +95,7 @@ const AllProducts = () => {
                 <option value={"0-100"}>$0 - $100</option>
                 <option value={"100-500"}>$100 - $500</option>
                 <option value={"500-1000"}>$500 - $1000</option>
+                <option value={"1000-100000000"}>More Than $1000</option>
               </select>
               <button
                 className="btn-main w-full"
