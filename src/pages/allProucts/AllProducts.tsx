@@ -37,7 +37,7 @@ const AllProducts = () => {
     );
   }
 
-  console.log(data);
+  console.log(data?.data);
   const handleSearch = () => {
     const searchResult = searchRef.current!.value;
     setSearchTerm(searchResult);

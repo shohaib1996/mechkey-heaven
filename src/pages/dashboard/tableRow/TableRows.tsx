@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { FaPen } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
+import UpdateModal from "../updateModal/UpdateModal";
 interface Keyboard {
   _id: string;
   image: string;
@@ -12,8 +14,8 @@ interface Keyboard {
 }
 
 const TableRows = ({ data }: { data: Keyboard }) => {
-  console.log(data);
-
+  //   console.log(data);
+  const [modal, setModal] = useState<boolean>(false);
   const { image, title, brand, price } = data;
 
   return (
@@ -33,13 +35,19 @@ const TableRows = ({ data }: { data: Keyboard }) => {
       <td>{brand}</td>
       <td>${price}</td>
       <th>
-        <button className="btn btn-ghost">
+        <button onClick={() => setModal(true)} className="btn btn-ghost">
           <FaPen className="text-3xl text-[#FA4F09]"></FaPen>
         </button>
         <button className="btn btn-ghost">
           <FaTrash className="text-3xl text-red-600"></FaTrash>
         </button>
       </th>
+
+      <UpdateModal
+        product={data}
+        modal={modal}
+        setModal={setModal}
+      ></UpdateModal>
     </tr>
   );
 };
