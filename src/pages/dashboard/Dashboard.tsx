@@ -26,15 +26,17 @@ const Dashboard = () => {
       <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#4A249D]"></div>
     </div>;
   }
-  console.log(data?.data);
+  //   console.log(data?.data);
 
   return (
     <div>
       <Navbar />
       <Container>
-        <button onClick={() => setModal(true)} className="btn-main my-5">
-          <span>Add Product</span>
-        </button>
+        <div className="flex justify-end">
+          <button onClick={() => setModal(true)} className="btn-main my-5">
+            <span>Add Product</span>
+          </button>
+        </div>
         <div className="overflow-x-auto mt-5 mb-20 rounded-[10px] border-2">
           <table className="table ">
             {/* head */}

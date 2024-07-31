@@ -1,5 +1,7 @@
+import { FaShoppingCart } from "react-icons/fa";
 import Container from "../../../utils/container/Container";
 import NavbarLink from "./navbarLink/NavbarLink";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -35,7 +37,9 @@ const Navbar = () => {
                 <NavbarLink />
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl text-white">daisyUI</a>
+            <Link to={"/"} className="btn btn-ghost text-xl text-white">
+              daisyUI
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 text-white">
@@ -43,7 +47,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">Button</a>
+            <a className="btn">
+              <FaShoppingCart className="text-3xl text-[#FA4F09]" />
+            </a>
           </div>
         </div>
       </Container>
