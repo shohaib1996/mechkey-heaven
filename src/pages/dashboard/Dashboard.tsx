@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { useGetProductsQuery } from "../../redux/api/baseApi";
 import Container from "../../utils/container/Container";
 import Footer from "../home/footer/Footer";
 import Navbar from "../home/navbar/Navbar";
+import AddProduct from "./addProduct/AddProduct";
 import TableRows from "./tableRow/TableRows";
 
 const Dashboard = () => {
+  const [modal, setModal] = useState<boolean>(false);
   const { data, isLoading } = useGetProductsQuery(undefined);
 
   interface Keyboard {
@@ -29,7 +32,10 @@ const Dashboard = () => {
     <div>
       <Navbar />
       <Container>
-        <div className="overflow-x-auto my-20 rounded-[10px] border-2">
+        <button onClick={() => setModal(true)} className="btn-main my-5">
+          <span>Add Product</span>
+        </button>
+        <div className="overflow-x-auto mt-5 mb-20 rounded-[10px] border-2">
           <table className="table ">
             {/* head */}
             <thead>
@@ -49,6 +55,8 @@ const Dashboard = () => {
         </div>
       </Container>
       <Footer />
+
+      <AddProduct modal={modal} setModal={setModal}></AddProduct>
     </div>
   );
 };

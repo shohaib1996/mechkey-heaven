@@ -1,32 +1,27 @@
-import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Footer from "../home/footer/Footer";
 import Navbar from "../home/navbar/Navbar";
 import Container from "../../utils/container/Container";
 import { Rating } from "@smastrom/react-rating";
-interface ProductResponse {
-  success: boolean;
-  statusCode: number;
-  message: string;
-  data: Keyboard;
-}
-
-interface Keyboard {
-  _id: number;
-  image: string;
-  title: string;
-  brand: string;
-  quantity: number;
-  price: number;
-  rating: number;
-  description: string;
-}
+import { useGetSingleProductQuery } from "../../redux/api/baseApi";
 
 const ProductDetails = () => {
-  const productResponse = useLoaderData() as ProductResponse;
-  const product = productResponse.data;
-  const { image, title, brand, quantity, price, rating, description } = product;
+  const { id } = useParams();
+  // console.log(id);
 
-  console.log(product);
+  const { data, isLoading } = useGetSingleProductQuery(id);
+  // console.log(data);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#4A249D]"></div>
+      </div>
+    );
+  }
+
+  const product = data?.data;
+  const { image, title, brand, quantity, price, rating, description } = product;
 
   return (
     <>
