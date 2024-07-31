@@ -18,10 +18,10 @@ interface Keyboard {
 }
 
 const AllProducts = () => {
-  const searchRef = useRef();
-  const [filterPrice, setFilterPrice] = useState("");
-  const [sort, setSort] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
+  const [filterPrice, setFilterPrice] = useState<string>("");
+  const [sort, setSort] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const filters = {
     searchTerm,
     sort,
@@ -39,17 +39,17 @@ const AllProducts = () => {
 
   console.log(data);
   const handleSearch = () => {
-    const searchResult = searchRef.current.value;
+    const searchResult = searchRef.current!.value;
     setSearchTerm(searchResult);
   };
-  const handlePriceRange = (e) => {
+  const handlePriceRange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
     const priceRange = e.target.value;
     console.log(priceRange);
 
     setFilterPrice(priceRange);
   };
-  const handleSort = (e) => {
+  const handleSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
     const sortData = e.target.value;
     setSort(sortData);
