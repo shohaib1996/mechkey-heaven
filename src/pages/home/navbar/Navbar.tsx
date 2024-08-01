@@ -2,8 +2,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import Container from "../../../utils/container/Container";
 import NavbarLink from "./navbarLink/NavbarLink";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../../redux/hooks/hook";
 
 const Navbar = () => {
+  const cartItems = useAppSelector((state) => state.cart.items);
   return (
     <div className=" bg-black">
       <Container>
@@ -47,9 +49,14 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">
-              <FaShoppingCart className="text-3xl text-[#FA4F09]" />
-            </a>
+            <Link to={`/cart`}>
+              <button className="btn bg-black border-none">
+                <FaShoppingCart className="text-3xl text-[#FA4F09]" />
+                <div className="badge badge-secondary">
+                  {cartItems?.length > 0 ? cartItems.length : 0}
+                </div>
+              </button>
+            </Link>
           </div>
         </div>
       </Container>

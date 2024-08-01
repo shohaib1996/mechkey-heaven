@@ -4,10 +4,16 @@ import Navbar from "../home/navbar/Navbar";
 import Container from "../../utils/container/Container";
 import { Rating } from "@smastrom/react-rating";
 import { useGetSingleProductQuery } from "../../redux/api/baseApi";
+import { useAppDispatch, useAppSelector } from "./../../redux/hooks/hook";
+import { addToCart } from "../../redux/features/productSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
   // console.log(id);
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const { totalOrderPrice } = useAppSelector((state) => state.cart);
+  console.log(totalOrderPrice, cartItems);
 
   const { data, isLoading } = useGetSingleProductQuery(id);
   // console.log(data);
@@ -20,8 +26,55 @@ const ProductDetails = () => {
     );
   }
 
-  const product = data?.data;
-  const { image, title, brand, quantity, price, rating, description } = product;
+  const products = data?.data;
+  const { image, title, brand, quantity, price, rating, description, _id } =
+    products;
+
+  const handleAddToCart = () => {
+    const product = {
+      _id,
+      image,
+      title,
+      brand,
+      quantity,
+      price,
+      rating,
+      description,
+    };
+
+    // Check if the product is already in the cart
+    const cartItem = cartItems.find((item) => item._id === product._id);
+
+    // If the product is in the cart and its quantity is less than or equal to 0
+    if (cartItem && cartItem.quantity <= 0) {
+      swal({
+        title: "Product is out of stock!",
+        text: "This product is no longer available.",
+        icon: "error",
+      });
+      return;
+    }
+
+    // If the product is not in the cart and its quantity is less than or equal to 0
+    if (!cartItem && product.quantity <= 0) {
+      swal({
+        title: "Product is out of stock!",
+        text: "This product is no longer available.",
+        icon: "error",
+      });
+      return;
+    }
+
+    // If the product is in stock, add it to the cart
+    dispatch(addToCart(product));
+
+    // Show success message
+    swal({
+      title: "Product added to cart!",
+      text: "Successfully added to your cart.",
+      icon: "success",
+    });
+  };
 
   return (
     <>
@@ -52,7 +105,7 @@ const ProductDetails = () => {
             <p>Price: {price}$</p>
             <p>Brand: {brand}</p>
             <p>Quantity: {quantity}</p>
-            <button className="btn-main w-full">
+            <button onClick={handleAddToCart} className="btn-main w-full">
               <span>Add to Cart</span>
             </button>
           </div>
