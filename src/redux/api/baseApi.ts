@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const baseApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://mechanical-keyboard-server.vercel.app/api/v1",
+    baseUrl: "http://localhost:5000/api/v1",
   }),
 
   tagTypes: ["products"],
@@ -11,7 +11,7 @@ export const baseApi = createApi({
     getProducts: builder.query({
       query: (filters) => {
         const params = new URLSearchParams(filters).toString();
-        console.log(params);
+        // console.log(params);
         return {
           url: `/product?${params}`,
           method: "GET",
