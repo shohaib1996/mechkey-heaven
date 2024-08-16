@@ -9,7 +9,7 @@ import Cart from "../pages/cart/Cart";
 import App from "../App";
 import CheckOut from "../pages/checkOut/CheckOut";
 import ConfirmedOrder from "../pages/confirmed-order/ConfirmedOrder";
-import ErrorPage from "@/pages/errorPage/ErrorPage";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
