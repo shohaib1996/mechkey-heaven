@@ -55,7 +55,7 @@ const CustomizeContents = () => {
           <div>
             <img
               className="rounded-lg"
-              src="https://i.imgur.com/JHHs0EF.png"
+              src="https://i.imgur.com/6Nqo3fd.png"
               alt="Switch Types"
             />
           </div>
@@ -68,7 +68,7 @@ const CustomizeContents = () => {
           <div>
             <img
               className="rounded-lg"
-              src="https://i.imgur.com/JHHs0EF.png"
+              src="https://i.imgur.com/VkzDzLT.png"
               alt="RGB Lighting"
             />
           </div>
@@ -83,7 +83,7 @@ const CustomizeContents = () => {
           <div>
             <img
               className="rounded-lg"
-              src="https://i.imgur.com/JHHs0EF.png"
+              src="https://i.imgur.com/Z6aBu00.png"
               alt="Macro Programming"
             />
           </div>
@@ -97,7 +97,7 @@ const CustomizeContents = () => {
           <div>
             <img
               className="rounded-lg"
-              src="https://i.imgur.com/JHHs0EF.png"
+              src="https://i.imgur.com/hFc7ajP.png"
               alt="Case Material"
             />
           </div>

@@ -41,70 +41,95 @@ const Slider = () => {
           <SwiperSlide className="mb-10 lg:mb-20">
             <div className="card bg-base-100  h-[450px]  ">
               <figure>
-                <img src="https://i.imgur.com/hmMZ1Ig.png" alt="Shoes" />
+                <img
+                  src="https://i.imgur.com/zoRQyDf.png"
+                  className="h-[350px] object-cover"
+                  alt="Shoes"
+                />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
+              <div className="card-body border-2 rounded-md">
+                <h2 className="card-title">
+                  Mechanical Keyboard X1{" "}
+                  <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    New Arrival!!
+                  </span>
+                </h2>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="mb-10 lg:mb-20">
             <div className="card bg-base-100  h-[450px] ">
               <figure>
-                <img src="https://i.imgur.com/hmMZ1Ig.png" alt="Shoes" />
+                <img
+                  src="https://i.imgur.com/8ZpXrnI.png"
+                  className="h-[350px] object-cover"
+                  alt="Shoes"
+                />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
+              <div className="card-body border-2 rounded-md">
+                <h2 className="card-title">
+                  Wireless Ergonomic{" "}
+                  <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    New Arrival!!
+                  </span>
+                </h2>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="mb-10 lg:mb-20">
             <div className="card bg-base-100  h-[450px] ">
               <figure>
-                <img src="https://i.imgur.com/hmMZ1Ig.png" alt="Shoes" />
+                <img
+                  src="https://i.imgur.com/ei0Rxa7.png"
+                  className="h-[350px] object-cover"
+                  alt="Shoes"
+                />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
+              <div className="card-body border-2 rounded-md">
+                <h2 className="card-title">
+                  Compact 60% Keyboard{" "}
+                  <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    New Arrival!!
+                  </span>
+                </h2>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="mb-10 lg:mb-20">
             <div className="card bg-base-100 h-[450px] ">
               <figure>
-                <img src="https://i.imgur.com/hmMZ1Ig.png" alt="Shoes" />
+                <img
+                  src="https://i.imgur.com/oBPpaMK.png"
+                  className="h-[350px] object-cover"
+                  alt="Shoes"
+                />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
+              <div className="card-body border-2 rounded-md">
+                <h2 className="card-title">
+                  Gaming Keyboard Ultra{" "}
+                  <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    New Arrival!!
+                  </span>
+                </h2>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="mb-10 lg:mb-20">
             <div className="card bg-base-100 h-[450px] ">
               <figure>
-                <img src="https://i.imgur.com/hmMZ1Ig.png" alt="Shoes" />
+                <img
+                  src="https://i.imgur.com/JHHs0EF.png"
+                  className="h-[350px] object-cover"
+                  alt="Shoes"
+                />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
+              <div className="card-body border-2 rounded-md">
+                <h2 className="card-title">
+                  Gaming keyboard Avengers{" "}
+                  <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    New Arrival!!
+                  </span>
+                </h2>
               </div>
             </div>
           </SwiperSlide>
