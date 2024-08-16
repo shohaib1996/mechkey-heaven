@@ -34,10 +34,12 @@ const FeatureProduct = () => {
 
   return (
     <Container>
-      <div className="mb-14 flex justify-between items-center">
-        <div className="flex justify-start items-center gap-10">
+      <div className="mb-14 flex justify-between items-center p-5 lg:p-0">
+        <div className="flex justify-start items-center lg:gap-10 gap-7">
           <p className="title-icon"></p>
-          <h1 className="text-4xl font-bold mt-2">Feature Products</h1>
+          <h1 className="text-xl lg:text-4xl font-bold mt-2">
+            Feature Products
+          </h1>
         </div>
         <div>
           <Link to={`/products`}>
@@ -47,8 +49,8 @@ const FeatureProduct = () => {
           </Link>
         </div>
       </div>
-      <hr className="mb-14 border-1" />
-      <div className="grid grid-cols-3 mb-20 gap-5">
+      <hr className="mb-14 border-1 lg:w-full w-56 mx-auto" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 mb-20 gap-5 p-5 lg:p-0">
         {data?.data?.slice(0, 6).map((keyboard: Keyboard) => (
           <Cards keyboard={keyboard} key={keyboard._id}></Cards>
         ))}

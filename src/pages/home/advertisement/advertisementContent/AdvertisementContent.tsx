@@ -4,7 +4,7 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 import { Ri24HoursFill } from "react-icons/ri";
 const AdvertisementContent = () => {
   return (
-    <div className="mb-48 flex justify-center items-center gap-5">
+    <div className="mb-12 lg:mb-48 flex justify-center items-center gap-5 lg:flex-row flex-col">
       <div className="card bg-[#FFE47F] w-96 shadow-xl">
         <div className="card-body">
           <h2 className="card-title text-5xl">

@@ -32,7 +32,7 @@ const Dashboard = () => {
     <div>
       <Navbar />
       <Container>
-        <div className="flex justify-end">
+        <div className="flex justify-end p-5 lg:p-0">
           <button onClick={() => setModal(true)} className="btn-main my-5">
             <span>Add Product</span>
           </button>

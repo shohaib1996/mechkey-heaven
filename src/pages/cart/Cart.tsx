@@ -17,7 +17,7 @@ const Cart = () => {
       {cartItems?.length > 0 ? (
         <Container>
           <div className="min-h-screen">
-            <div className="flex justify-end my-5">
+            <div className="flex justify-end my-5 p-5 lg:p-0">
               <Link to={`/checkout`}>
                 <button className="btn-main">
                   <span>Proceed To Purchase</span>

@@ -82,14 +82,14 @@ const ProductDetails = () => {
       <Container>
         <div className="mt-20 mb-20 flex justify-center items-center">
           <span className="title-icon"></span>
-          <h2 className="mx-20 text-4xl font-extrabold mt-2">
+          <h2 className="mx-10 lg:mx-20 text-xl lg:text-4xl font-extrabold mt-2">
             Product Details
           </h2>
           <span className="title-icon"></span>
         </div>
-        <div className="card lg:card-side bg-base-100 shadow-xl my-20">
+        <div className="card lg:card-side bg-base-100 shadow-xl my-10 lg:my-20">
           <figure className="flex-1">
-            <img className="h-[500px]" src={image} alt="Album" />
+            <img className="h-[350px] lg:h-[500px]" src={image} alt="Album" />
           </figure>
           <div className="card-body flex-1 bg-slate-200 rounded-r-md">
             <h2 className="card-title">{title}</h2>

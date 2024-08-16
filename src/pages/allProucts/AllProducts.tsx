@@ -5,6 +5,7 @@ import Container from "../../utils/container/Container";
 import { useGetProductsQuery } from "../../redux/api/baseApi";
 import { FaSearch } from "react-icons/fa";
 import { useRef, useState } from "react";
+import useDebounce from "../../redux/hooks/useDebounce";
 
 interface Keyboard {
   _id: string;
@@ -22,8 +23,9 @@ const AllProducts = () => {
   const [filterPrice, setFilterPrice] = useState<string>("");
   const [sort, setSort] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 1000);
   const filters = {
-    searchTerm,
+    searchTerm: debouncedSearchTerm,
     sort,
     priceRange: filterPrice,
   };
@@ -59,20 +61,22 @@ const AllProducts = () => {
       <Navbar />
       <Container>
         <div className="">
-          <div className="space-y-7">
-            <input
-              ref={searchRef}
-              className="input w-[450px] input-bordered join-item"
-              placeholder="Product name"
-            />
-            <button
-              onClick={handleSearch}
-              className="btn join-item rounded-r-full bg-[#FA4F09]"
-            >
-              <FaSearch></FaSearch>
-            </button>
+          <div className="">
+            <div className="flex justify-center lg:justify-start items-center p-5 lg:p-0 mt-5 lg:mt-20">
+              <input
+                ref={searchRef}
+                className="input w-[450px] input-bordered join-item"
+                placeholder="Product name"
+              />
+              <button
+                onClick={handleSearch}
+                className="btn join-item rounded-r-full bg-[#FA4F09]"
+              >
+                <FaSearch className="text-white"></FaSearch>
+              </button>
+            </div>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5 lg:p-0 mt-0 lg:mt-12">
               <select
                 onChange={handleSort}
                 name="price"
@@ -114,7 +118,7 @@ const AllProducts = () => {
             <p className="title-icon mb-4 ml-2 mr-2"></p>
           </div>
 
-          <div className="grid grid-cols-3 mb-20 mt-20 gap-5 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 mb-20 mt-20 gap-5 p-5 lg:p-0">
             {data?.data?.map((keyboard: Keyboard) => (
               <Cards keyboard={keyboard} key={keyboard._id}></Cards>
             ))}

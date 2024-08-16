@@ -25,9 +25,9 @@ const Testimonial = () => {
   }, []);
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="mt-48 mb-20 flex justify-center items-center">
+      <div className="mt-10 lg:mt-48 mb-20 flex justify-center items-center">
         <span className="title-icon"></span>
-        <h2 className="mx-20 text-4xl font-extrabold mt-2">
+        <h2 className="mx-10 lg:mx-20 text-xl lg:text-4xl font-extrabold mt-2">
           What our customer say
         </h2>
         <span className="title-icon"></span>
