@@ -19,7 +19,7 @@ interface Testimonial {
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   useEffect(() => {
-    fetch("../../../../public/testimonial.json")
+    fetch("/testimonial.json")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);

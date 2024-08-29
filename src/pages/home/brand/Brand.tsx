@@ -12,7 +12,7 @@ const Brand = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("../../../../public/brand.json");
+      const res = await fetch("/brand.json");
       const data: Brand[] = await res.json();
       setData(data);
     };
