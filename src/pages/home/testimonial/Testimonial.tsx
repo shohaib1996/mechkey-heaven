@@ -19,7 +19,7 @@ interface Testimonial {
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   useEffect(() => {
-    fetch("https://hire-harbor-server.vercel.app/testimonial")
+    fetch("/public/testimonial.json")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);
